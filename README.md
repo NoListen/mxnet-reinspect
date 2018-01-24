@@ -24,5 +24,9 @@ MXNet version of [Reinspect](https://github.com/Russell91/reinspect)
 - output the proposals
 - extract the features of bbox proposals
 
+# Note
+- tracking is not included which you can refer to [MOT_XCODE](https://github.com/HansSJTU/MOT_XCODE).
+- bridging python and C++ is not included which you can refer to [numpy-opencv-converter](https://github.com/spillai/numpy-opencv-converter).
+
 # TODO
-- add learning process to this setting.
+- add learning process to mxnet-reinspect.
