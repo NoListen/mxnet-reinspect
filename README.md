@@ -1,20 +1,26 @@
-# mxnet-reinspect (outdated)
-1. MxNet would use the caffeOp for different Pooling operation.
-2. The layer Transpose is implemented in https://github.com/NoListen/apollocaffe/tree/lstm_caffe (For convinience)
+# mxnet-reinspect
 
-# Adaption
-MXNet has implemented Transpose Layer accordingly and it changed its Pooling layer to have two types.
+MXNet version of [Reinspect](https://github.com/Russell91/reinspect)
 
-Thus, we don't need to use the CaffeOp any more and I will update it later. I suppose that it will be updated before 15th, August.
+# Features
+- No training included
+- 35 fps for detection (Nvidia TITANX)
+- enlarge the bbox to the whole body by scales varying from scenes to scenes
+- ROI Pooling for bounding boxes to extract features
 
-This modification is mainly because that the ['apollocaffe version'](https://github.com/Russell91/ReInspect) is too slow and about 16 frames/s on TITAN X.
+# Additional Requirements
+- Transfer caffemodel to MXNet using caffe_converter in mxnet/tools.
 
-This mxnet version can achieve 35 frame/s respectively and can extract features from corresponding bounding boxes using ROIPooling.
+# Illustration
+- mxnet_track.py is the main file
+- config.json describes the hyperparameters
+- reinspect.json is the network architecture file
+- utils is similar to that in [Reinspect](https://github.com/Russell91/reinspect) with redundant files moved.
+- model-transfer specifies the needs to deal with the model learned in [Reinspect](https://github.com/Russell91/reinspect)
 
+# Process
+- mxnet model load googlenet params
+- mxnet model load lstm params (lstm.h5)
 
-# Notification
-Due to later experiment, the slow speed of the apollocaffe version is due to the python API.
-
-One has implemented the pure C++ version and find it can also achieve 29 frames/s.
-
-
+# TODO
+- add learning process to this setting.
