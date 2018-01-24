@@ -21,6 +21,8 @@ MXNet version of [Reinspect](https://github.com/Russell91/reinspect)
 # Process
 - mxnet model load googlenet params
 - mxnet model load lstm params (lstm.h5)
+- output the proposals
+- extract the features of bbox proposals
 
 # TODO
 - add learning process to this setting.
